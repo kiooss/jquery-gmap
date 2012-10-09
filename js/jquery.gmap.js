@@ -1,5 +1,9 @@
 /*
  * jQuery plugin for google map with markers.
+ *
+ * Copyright 2012, Yang Yang
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
  * Depends on:
  * <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
  * <script type="text/javascript" src="//www.google.com/jsapi"></script>
