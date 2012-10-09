@@ -12,32 +12,30 @@
 (function($) {
   var methods = {
     init: function(options) {
-      var current_location = get_current_location();
-      var defaults = {
+      var current_location, defaults, mapDefaults, options, mapOptions, map, marker;
+
+      current_location = get_current_location();
+      defaults = {
         lat: current_location.lat,
         lng: current_location.lng,
         markInitLocation: false,
         onMarker: function(index){return false;},
         maxZoom: 15,
       };
-
-      var mapDefaults = {
+      mapDefaults = {
         zoom: 15,
         center: new google.maps.LatLng(current_location.lat, current_location.lng),
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: false
       };
-
-      var options = $.extend(defaults, options);
-
-      var mapOptions = $.extend(mapDefaults, options['mapOptions']);
-
-      var map = new google.maps.Map(this.get(0), mapOptions);
+      options = $.extend(defaults, options);
+      mapOptions = $.extend(mapDefaults, options['mapOptions']);
+      map = new google.maps.Map(this.get(0), mapOptions);
 
       this.data('map', extendGoogleMap(map, options));
 
       if (options['markInitLocation']) {
-        var marker = createMarker(new google.maps.LatLng(options['lat'], options['lng']));
+        marker = createMarker(new google.maps.LatLng(options['lat'], options['lng']));
         marker.setMap(map);
         map.panTo(marker.position);
       }
@@ -75,11 +73,12 @@
       var _this = this;
       map.set('draggableCursor', 'pointer');
       google.maps.event.addListenerOnce(map, 'click', function(event) {
-        map.set('draggableCursor', 'default');
-
         var marker = createMarker(event.latLng);
+
         marker.setDraggable(true);
         marker.setIcon('images/star.png');
+
+        map.set('draggableCursor', 'default');
 
         map.addMarker(marker);
         marker.setMap(map);
@@ -180,11 +179,10 @@
   }
 
   function createMarker(latLng) {
-    var marker = new google.maps.Marker({
+    return new google.maps.Marker({
       position: latLng,
       animation: google.maps.Animation.DROP,
     });
-    return marker;
   }
 
   function bounceOnce(marker) {
@@ -197,8 +195,8 @@
   }
 
   function createInfoBox(info) {
-    var boxText = '<div class="mapTooltip">'+info+'</div>';
-    var myOptions = {
+    var boxText = '<div class="mapTooltip">'+info+'</div>',
+        myOptions = {
       content: boxText
      ,disableAutoPan: false
      ,maxWidth: 0
