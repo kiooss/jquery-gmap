@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Google Map V3 jQuery plugin</title>
+    <style type="text/css" media="all">
+      #map {
+        width: 800px;
+        height: 600px;
+      }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js"></script>
+    <script type="text/javascript" src="js/jquery.gmap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        $('#map').gmap({
+          markInitLocation: true
+        });
+
+        $('#enable_drop_marker').click(function() {
+          $('#map').gmap('enableDropMarker');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Google Map V3 jQuery Plugin</h1>
+    <button id="enable_drop_marker">Enable drop marker</button>
+    <div id="map">
+    </div>
+  </body>
+</html>
