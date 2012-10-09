@@ -8,10 +8,11 @@ Just a jQuery plugin for Google Maps JavaScript API V3
 
 Just follow these simple steps to add an google map to your app:
 
-1. Include jQuery on your page.
+1. Include jQuery and this plugin on your page.
 
     ```html
     <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="jquery.gmap.js"></script>
     ```
 
 2. Include google map javascript api V3 and infobox.js to support the infobox.
@@ -22,13 +23,7 @@ Just follow these simple steps to add an google map to your app:
     <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js"></script>
     ```
 
-3. Include this plugin before fisrt use.
-
-    ```html
-    <script src="jquery.gmap.js"></script>
-    ```
-
-4. Just initilize the gmap with an container.
+3. Just initilize the gmap with an container.
 
     ```html
     <script>
