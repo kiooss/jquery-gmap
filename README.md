@@ -20,8 +20,8 @@ Just follow these simple steps to add an google map to your app:
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js"></script>
-    <script src="jquery.gmap.js"></script>
     ```
+
 3. Include this plugin before fisrt use.
 
     ```html
