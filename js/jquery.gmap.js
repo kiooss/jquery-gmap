@@ -10,6 +10,7 @@
  * <script type="text/javascript" src="//google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox.js"></script>
  */
 (function($) {
+  'use strict';
   var methods = {
     init: function(options) {
       var current_location, defaults, mapDefaults, options, mapOptions, map, marker;
